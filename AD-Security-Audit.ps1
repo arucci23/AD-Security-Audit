@@ -65,7 +65,7 @@ $ReportData += $PasswordNeverExpires | Select-Object Name, SamAccountName, @{Nam
 $ReportData += $PrivilegedUsers | Select-Object Name, SamAccountName, Group
 $ReportData += $StaleComputers | Select-Object Name, SamAccountName, @{Name="Issue"; Expression={"Stale Computer"}}
 
-# Export to CSV file
+# Export to a CSV file
 $ReportData | Export-CSV -Path $OutputFile -NoTypeInformation
 
 Write-Output "AD Security Audit completed! Report saved to $OutputFile"
